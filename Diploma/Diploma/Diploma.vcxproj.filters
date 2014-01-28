@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Views">
+      <UniqueIdentifier>{2a33dfe5-8461-4d69-b171-8dbb09b7fdf8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Doc">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Rendering">
+      <UniqueIdentifier>{9422cd37-dcff-484a-a927-f5c9700d61a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering\2D">
+      <UniqueIdentifier>{b9f4dbe6-eb2c-44bd-984f-817a58ad79c2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mice">
+      <UniqueIdentifier>{ac9b380b-3af5-4a89-8b5b-dd4c9b129817}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{2f84e1e8-1846-45fa-b5a1-61e93847c31d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{4f41fd0e-955b-4f9f-a3f6-077552ebbfdc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Mice\MouseMovementLogic">
+      <UniqueIdentifier>{cf9bbbd9-f444-4569-90ea-39873df7e72b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="UserImages.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Diploma.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\DiplomaDoc.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Diploma.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Toolbar.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Toolbar256.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="DiplomaDoc.h">
+      <Filter>Doc</Filter>
+    </ClInclude>
+    <ClInclude Include="CDiploma3DView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="DiplomaView.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrm.h">
+      <Filter>Views</Filter>
+    </ClInclude>
+    <ClInclude Include="Diploma.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GridRenderer.h">
+      <Filter>Rendering\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="SelectMouse.h">
+      <Filter>Mice</Filter>
+    </ClInclude>
+    <ClInclude Include="IMouse.h">
+      <Filter>Mice</Filter>
+    </ClInclude>
+    <ClInclude Include="MiceFactory.h">
+      <Filter>Mice</Filter>
+    </ClInclude>
+    <ClInclude Include="EMouseType.h">
+      <Filter>Mice</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="IrrlichtFixture.h">
+      <Filter>Tests</Filter>
+    </ClInclude>
+    <ClInclude Include="IMouseMovementLogic.h">
+      <Filter>Mice\MouseMovementLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="RButtonDownMovementLogic.h">
+      <Filter>Mice\MouseMovementLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="MiceMovementLogicFactory.h">
+      <Filter>Mice\MouseMovementLogic</Filter>
+    </ClInclude>
+    <ClInclude Include="MButtonDownMovementLogic.h">
+      <Filter>Mice\MouseMovementLogic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CDiploma3DView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="DiplomaView.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrm.cpp">
+      <Filter>Views</Filter>
+    </ClCompile>
+    <ClCompile Include="DiplomaDoc.cpp">
+      <Filter>Doc</Filter>
+    </ClCompile>
+    <ClCompile Include="Diploma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GridRenderer.cpp">
+      <Filter>Rendering\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="SelectMouse.cpp">
+      <Filter>Mice</Filter>
+    </ClCompile>
+    <ClCompile Include="MiceFactory.cpp">
+      <Filter>Mice</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraInteractionTests.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="TestsMouseSelect.cpp">
+      <Filter>Tests</Filter>
+    </ClCompile>
+    <ClCompile Include="RButtonDownMovementLogic.cpp">
+      <Filter>Mice\MouseMovementLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="MiceMovementLogicFactory.cpp">
+      <Filter>Mice\MouseMovementLogic</Filter>
+    </ClCompile>
+    <ClCompile Include="MButtonDownMovementLogic.cpp">
+      <Filter>Mice\MouseMovementLogic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Diploma.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>
