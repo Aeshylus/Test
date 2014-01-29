@@ -32,12 +32,14 @@ namespace
         CHECK(m_view.GetCamera()->GetPosition().equals(core::vector3df(0., 0., 0.)));
         }
 
-      void TEST_PAN(const CPoint& start, const CPoint& end, const core::vector3df& i_expected)
+      void TEST_PAN(const CPoint& start, const CPoint& end)
         {
         MButtonDownMovementLogic().MakeMove(&m_view, start, end);
 
-        CHECK( m_view.GetCamera()->GetTarget().equals(i_expected));
-        CHECK( m_view.GetCamera()->GetPosition().equals(i_expected));
+        auto camera = m_view.GetCamera();
+        auto expected = m_view.GetCamera()->ScreenToCameraCoordinates(end) - m_view.GetCamera()->ScreenToCameraCoordinates(start);
+        CHECK( camera->GetTarget().equals(expected));
+        CHECK( camera->GetPosition().equals(expected));
         }
 
       void TEST_ROTATE(const CPoint& start, const CPoint& end, const core::vector3df& i_expected)
@@ -58,7 +60,7 @@ SUITE(PanLogicMovement)
   //////////////////////////////////////////////////////////////////////////
   TEST_FIXTURE(_MouseFixture, PanLogic)
     {
-    TEST_PAN(CPoint(0,0), CPoint(10, 10), core::vector3df(0., 10., 10));
+    TEST_PAN(CPoint(0,0), CPoint(10, 10));
     }
   }
 
@@ -105,8 +107,11 @@ SUITE(SelectMouseTests)
     m_mouse.OnMouseMove(&m_view, 0, end);
     m_mouse.OnMButtonUp(&m_view, 0, end);
 
-    CHECK(m_view.GetCamera()->GetPosition().equals(core::vector3df(0., 10., 10.)));
-    CHECK(m_view.GetCamera()->GetTarget().equals(core::vector3df(0., 10., 10.)));
+    std::shared_ptr<Camera> camera = m_view.GetCamera();
+    irr::core::vector3df expected = camera->ScreenToCameraCoordinates(end) - camera->ScreenToCameraCoordinates(start);
+
+    CHECK(camera->GetPosition().equals(expected));
+    CHECK(camera->GetTarget().equals(expected));
     }
 
   //////////////////////////////////////////////////////////////////////////
@@ -114,20 +119,23 @@ SUITE(SelectMouseTests)
     {
     CPoint start1(0, 0);
     CPoint end1(5, 5);
+    CPoint start2(10, 10);
+    CPoint end2(15, 15);
 
     m_mouse.OnMButtonDown(&m_view, 0, start1);
     m_mouse.OnMouseMove(&m_view, 0, end1);
     m_mouse.OnMButtonUp(&m_view, 0, end1);
     
-    CPoint start2(10, 10);
-    CPoint end2(15, 15);
-
     m_mouse.OnMButtonDown(&m_view, 0, start2);
     m_mouse.OnMouseMove(&m_view, 0, end2);
     m_mouse.OnMButtonUp(&m_view, 0, end2);
 
-    CHECK(m_view.GetCamera()->GetPosition().equals(core::vector3df(0., 10., 10.)));
-    CHECK(m_view.GetCamera()->GetTarget().equals(core::vector3df(0., 10., 10.)));
+    std::shared_ptr<Camera> camera = m_view.GetCamera();
+    irr::core::vector3df expected = camera->ScreenToCameraCoordinates(end1) - camera->ScreenToCameraCoordinates(start1) + 
+                                   (camera->ScreenToCameraCoordinates(end2) - camera->ScreenToCameraCoordinates(start2));
+
+    CHECK(camera->GetPosition().equals(expected));
+    CHECK(camera->GetTarget().equals(expected));
     }
 
   }

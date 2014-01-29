@@ -120,6 +120,7 @@
     <ClInclude Include="MButtonDownMovementLogic.h" />
     <ClInclude Include="MiceFactory.h" />
     <ClInclude Include="MiceMovementLogicFactory.h" />
+    <ClInclude Include="Parser.h" />
     <ClInclude Include="RButtonDownMovementLogic.h" />
     <ClInclude Include="SelectMouse.h" />
     <ClInclude Include="CDiploma3DView.h" />
@@ -144,6 +145,8 @@
     <ClCompile Include="MButtonDownMovementLogic.cpp" />
     <ClCompile Include="MiceFactory.cpp" />
     <ClCompile Include="MiceMovementLogicFactory.cpp" />
+    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="ParserTests.cpp" />
     <ClCompile Include="RButtonDownMovementLogic.cpp" />
     <ClCompile Include="SelectMouse.cpp" />
     <ClCompile Include="stdafx.cpp">
